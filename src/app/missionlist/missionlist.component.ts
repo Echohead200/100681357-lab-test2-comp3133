@@ -9,14 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class MissionlistComponent implements OnInit {
 
 
-  private getSpacedata = "https://api.spacexdata.com/v3/launches"
-  dataList = []
+  private getspaceinfo = "https://api.spacexdata.com/v3/launches";
+  //getspaceinfo
+  // REST_API_END_POINT
+  //res
+  dataList: any[] = [];
   constructor(private getEndPoint: HttpClient) { }
 
   ngOnInit(): void {
-    this.getEndPoint.get(this.getSpacedata).subscribe((response: any) => {
-      console.log(response.data)
-      this.dataList = response.data
+    this.getEndPoint.get(this.getspaceinfo).subscribe((response: any) => {
+      console.log(response)
+      this.dataList =  response
     })
   }
 

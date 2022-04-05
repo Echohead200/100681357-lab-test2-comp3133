@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MissionlistComponent } from './missionlist/missionlist.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MissiondetailsComponent } from './missiondetails/missiondetails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MissionlistComponent
+    MissionlistComponent,
+    MissiondetailsComponent
   ],
   imports: [
     BrowserModule,

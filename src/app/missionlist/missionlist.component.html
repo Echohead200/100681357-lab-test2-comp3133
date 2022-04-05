@@ -1,8 +1,12 @@
-<p>missionlist works!</p>
+<p>mission list works!</p>
 
-<div *ngFor="let flight of dataList">
-    <p> {{flight.mission_name}} </p>
-    <p> {{flight.launch_year}} </p>
-    <p> {{flight.details}} </p>
-    <p> {{flight.mission_patch_small}} </p>
+<div *ngFor="let missions of dataList">
+   <p>Mission Name: {{missions.mission_name}} </p>
+   <a [routerLink]="['/missiondetails', missions.flight_number]">LINK HERE!: {{missions.mission_name}}</a>
+   <p>Launch Year: {{missions.launch_year}} </p>
+   <p>Details: {{missions.details}} </p>
+   <!-- <p>Mission Patch Small: {{missions.mission_patch_small}} </p> -->
+   <p>F number: {{missions.flight_number}} </p>
+   <p>NEXT_____________________</p>
+    
 </div>
