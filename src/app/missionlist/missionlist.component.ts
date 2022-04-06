@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-missionlist',
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class MissionlistComponent implements OnInit {
 
 
+  currentitem = "FalconSat"
+  flightpass!: number;
   private getspaceinfo = "https://api.spacexdata.com/v3/launches";
   //getspaceinfo
   // REST_API_END_POINT
@@ -17,10 +20,15 @@ export class MissionlistComponent implements OnInit {
   constructor(private getEndPoint: HttpClient) { }
 
   ngOnInit(): void {
+    
     this.getEndPoint.get(this.getspaceinfo).subscribe((response: any) => {
-      console.log(response)
+      //console.log(response)
       this.dataList =  response
     })
+  }
+  setnum(inputnum: number){
+    this.flightpass = inputnum
+    console.log("setnum "+this.flightpass)
   }
 
 }

@@ -1,12 +1,16 @@
 <p>mission list works!</p>
-
-<div *ngFor="let missions of dataList">
-   <p>Mission Name: {{missions.mission_name}} </p>
-   <a [routerLink]="['/missiondetails', missions.flight_number]">LINK HERE!: {{missions.mission_name}}</a>
-   <p>Launch Year: {{missions.launch_year}} </p>
-   <p>Details: {{missions.details}} </p>
-   <!-- <p>Mission Patch Small: {{missions.mission_patch_small}} </p> -->
-   <p>F number: {{missions.flight_number}} </p>
-   <p>NEXT_____________________</p>
+<p> couldn't figure out details page</p>
+<!-- <app-missiondetails hidden [item] = "currentitem"></app-missiondetails> -->
+<mat-card  *ngFor="let missions of dataList">
+    <div class="entey">
     
-</div>
+<mat-card-title>Mission Name: {{missions.mission_name}} </mat-card-title>  
+        <a [routerLink]="['/missiondetails',{state: {hello: currentitem}}]">
+            Link </a>
+            <p>Launch Year: {{missions.launch_year}} </p>
+        <p>Details: {{missions.details}} </p> 
+    </div> 
+    <br>   
+</mat-card>
+<br>
+
